@@ -111,6 +111,10 @@ LangChain & Groq API (Text translation)
 
 Bootstrap/CSS (Frontend styling)
 
+# Images
+## Register Page
+![image alt](https://github.com/Saimoguloju/English-to-Telugu-Translator/blob/main/Images/Register.png)
+
 # License
 
 This project is licensed under the MIT License.
