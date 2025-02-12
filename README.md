@@ -41,8 +41,8 @@ Pip
 
 ## 1. Clone the Repository
 ```python
-git clone https://github.com/your-username/translator-app.git
-cd translator-app
+git clone https://github.com/Saimoguloju/English-to-Telugu-Translator.git
+cd English-to-Telugu-Translator
 ```
  
 
@@ -119,4 +119,4 @@ This project is licensed under the MIT License.
 
 Feel free to submit issues or pull requests to improve this project.
 
-Made with ❤️ by Moguloju Sai
+Made with ❤️ by [Moguloju Sai](https://linktr.ee/Moguloju_Sai)
