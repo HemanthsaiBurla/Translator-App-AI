@@ -5,3 +5,6 @@ langchain
 langchain_community
 openai
 flask
+Flask-Bcrypt
+Flask-MySQLdb
+Flask-Session
