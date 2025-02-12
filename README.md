@@ -121,6 +121,9 @@ Bootstrap/CSS (Frontend styling)
 ## Database
 ![image alt](https://github.com/Saimoguloju/English-to-Telugu-Translator/blob/main/Images/Database.png)
 
+## Translator
+![image alt](https://github.com/Saimoguloju/English-to-Telugu-Translator/blob/main/Images/Translator.png)
+
 # License
 
 This project is licensed under the MIT License.
