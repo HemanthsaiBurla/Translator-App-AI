@@ -115,6 +115,9 @@ Bootstrap/CSS (Frontend styling)
 ## Register Page
 ![image alt](https://github.com/Saimoguloju/English-to-Telugu-Translator/blob/main/Images/Register.png)
 
+## Login Page
+![image alt](https://github.com/Saimoguloju/English-to-Telugu-Translator/blob/main/Images/Login.png)
+
 # License
 
 This project is licensed under the MIT License.
