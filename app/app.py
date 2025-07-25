@@ -21,22 +21,25 @@ chat_model = ChatOpenAI(
 def translate_text(source_lang, target_lang, text, mode="simple"):
     if mode == "detailed":
         prompt = (
-        f"Translate the following from {source_lang} to {target_lang} without any markdown, bullet points, or headings. "
-        + (f"Use Simplified Chinese characters only.\n" if target_lang.lower() == "chinese" else "")
-        + f"1. Word-level translation.\n"
-        f"2. Meaning in one or two lines.\n"
-        f"3. Usage or related words (in 1 line).\n\n"
-        f'Text: "{text}"'
+            f"Translate the following from {source_lang} to {target_lang} without any markdown, bullet points, or headings. "
+            + (f"Use Simplified Chinese characters only.\n" if target_lang.lower() == "chinese" else "")
+            + f"1. Word-level translation.\n"
+              f"2. Meaning in one or two lines.\n"
+              f"3. Usage or related words (in 1 line).\n\n"
+              f'Text: "{text}"'
         )
     else:
         prompt = (
-        f'Translate "{text}" from {source_lang} to {target_lang} in a simple, direct way without any note. '
-        + ("Use Simplified Chinese characters only." if target_lang.lower() == "chinese" else "")
+            f'Translate "{text}" from {source_lang} to {target_lang} in a simple, direct way without any note. '
+            + ("Use Simplified Chinese characters only." if target_lang.lower() == "chinese" else "")
         )
-
 
     response = chat_model.invoke([HumanMessage(content=prompt)])
     return response.content
+
+@app.route("/")
+def home():
+    return redirect(url_for("translator"))  # Redirect homepage to translator
 
 @app.route("/translator", methods=["GET", "POST"])
 def translator():
@@ -79,7 +82,6 @@ def translator():
                            target_lang=target_lang,
                            text=text,
                            history=session.get("history", []))
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
