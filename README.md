@@ -120,29 +120,28 @@ http://127.0.0.1:5000/translator
 
 ## 🖼️ UI Screenshots
 
-Screenshots are located in `app/Project_Images/`
+Screenshots are located in `translator_images/`
 
 ### Home Screen  
-![Home Screen](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_HomeScreen_Tran.png)
+![Home Screen](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_HomeScreen_Tran.png)
 
 ### Detailed Translation  
-![Detailed Translation](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_detail_translation.png)
+![Detailed Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_detail_translation.png)
 
 ### Language Switch  
-![Language Switch](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_Lan_switch.png)
+![Language Switch](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Lan_switch.png)
 
 ### Copied Translation  
-![Copied Translation](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_Sharing_Copied_Text.png)
-                     
+![Copied Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Sharing_Copied_Text.png)
 
 ### Translation History  
-![Translation History](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_Tran_History.png)
+![Translation History](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Tran_History.png)
 
 ### English-Hindi Example  
 ![En-Hi Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Detail_tran_En-Hi.png)
 
 ### Different Language Pair  
-![Different Language Pair](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_with_diff_lan.png)
+![Different Language Pair](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_with_diff_lan.png)
 
 
 ---
