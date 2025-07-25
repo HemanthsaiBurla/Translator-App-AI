@@ -131,7 +131,7 @@ Screenshots are located in `translator_images/`
 ### Language Switch  
 ![Language Switch](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Lan_switch.png)
 
-### Copied Translation  
+### Copied and Sharing Translation  
 ![Copied Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Sharing_Copied_Text.png)
 
 ### Translation History  
