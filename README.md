@@ -133,12 +133,13 @@ Screenshots are located in `app/Project_Images/`
 
 ### Copied Translation  
 ![Copied Translation](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_Sharing_Copied_Text.png)
+                     
 
 ### Translation History  
 ![Translation History](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_Tran_History.png)
 
 ### English-Hindi Example  
-![En-Hi Translation](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_Detail_tran_En-Hi.png)
+![En-Hi Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Detail_tran_En-Hi.png)
 
 ### Different Language Pair  
 ![Different Language Pair](https://github.com/HemanthsaiBurla/Translator-AI/blob/main/app/Project_Images/T_with_diff_lan.png)
