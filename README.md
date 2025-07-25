@@ -7,17 +7,23 @@ Users can **instantly translate** text between **multiple languages** including 
 
 > 💡 Offers both **Instant Translation** for quick results and **Detailed Translation** to get word meanings, usage, and synonyms.
 
+## 🌐 Live Demo
+**🔗 Live URL:** `https://translator-app-ai.onrender.com/translator`  
+or  
+**🔗 Live Translator** [Click Here](https://translator-app-ai.onrender.com/translator)
 
 ---
 
 ## 🔥 Features
 
 - 🎯 **Direct Translation** (No login or registration)  
-- 🔁 **Language Selection** (English ↔ Telugu ↔ Hindi + Upto-10)  
-- 🧠 **Simple & Detailed Modes** (Word meanings, usage)  
+- 🔁 **Language Selection** (English ↔ Telugu ↔ Hindi + Up to 10 languages)  
+- 🧠 **Simple & Detailed Modes** (Word meanings, usage, synonyms)  
 - 🧾 **Translation History** (Last 10 searches stored)  
 - 🌐 Powered by **LangChain + Groq API**  
-- 💡 Clean UI with HTML + CSS (local only)  
+- 💡 Clean UI with HTML + CSS  
+- 🚀 **Deployed on Render.com** (Always accessible)
+- 💡 **Added additional buttons like copy, share, cleary history and clear input**
 - 🖼️ Project screenshots for easy understanding  
 
 ---
@@ -35,8 +41,9 @@ TRANSLATOR-APP-AI/
 │   │   └── translator.html          # Main UI HTML template
 │   └── app.py                       # Main Flask app
 │
-├── .env                             # Environment variables
+├── .env                             # Environment variables (local)
 ├── requirements.txt                 # Project dependencies
+├── runtime.txt                      # Python version for Render
 ├── load_api_key.ipynb               # API key test/setup (optional)
 ├── .gitignore                       # Files to ignore in Git
 └── README.md                        # This file
@@ -46,15 +53,14 @@ TRANSLATOR-APP-AI/
 
 ## ✅ Prerequisites
 
-Make sure you have the following installed:
-
 - Python 3.8+  
 - pip (Python package manager)  
-- A valid **Groq API Key**
+- A valid **Groq API Key** ([Get it here](https://console.groq.com))
+- **Render.com account** (for deployment)
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Local Development Setup
 
 ### 1. Clone the Repository
 
@@ -85,37 +91,108 @@ GROQ_API_KEY=your_groq_api_key
 SECRET_KEY=your_flask_secret_key
 ```
 
----
-
-## ▶️ Run the App
+### 5. Run the App Locally
 
 ```bash
 python app/app.py
 ```
 
-Now open your browser and go to:
-
+Now open your browser(chrome or any) and go to:
 ```
 http://127.0.0.1:5000/translator
 ```
 
 ---
 
-## ✨ Usage
+## 🌐 Deploy to Render.com
 
-- Choose source language and target language  
-- Enter text you want to translate  
-- Select **Simple** or **Detailed** mode  
-- Hit **Translate**  
-- Scroll to view previous translations (history saved in session)
+### Step 1: Prepare for Deployment
+
+Create `requirements.txt` with these dependencies:
+```txt
+Flask==2.3.3
+python-dotenv==1.0.0
+langchain==0.0.340
+groq==0.4.1
+openai==1.3.0
+gunicorn==21.2.0
+Werkzeug==2.3.7
+```
+
+Create `runtime.txt` (optional):
+```txt
+python-3.11.0
+```
+
+### Step 2: Deploy on Render.com
+
+1. **Sign up** at [Render.com](https://render.com)
+2. **Connect GitHub** → Select your repository
+3. **Configure settings:**
+   ```bash
+   Name: translator-app-ai
+   Region: Oregon (US West) or Singapore (for India)
+   Branch: main
+   Runtime: Python 3
+   Build Command: pip install -r requirements.txt
+   Start Command: python app/app.py or gunicorn --bind 0.0.0.0:$PORT app.app:app
+   ```
+
+### Step 3: Add Environment Variables
+
+In Render Dashboard → Your Service → Environment:
+```env
+GROQ_API_KEY=your_groq_api_key_here
+#### Optional:
+SECRET_KEY=your_flask_secret_key_here
+FLASK_ENV=production
+```
+
+### Step 4: Deploy & Access
+
+- Click **"Create Web Service"**
+- Wait for deployment (5-10 minutes)
+- Access your app at: `https://translator-app-ai.onrender.com/translator`
 
 ---
 
-## 🧠 Translation Modes
+## ⚡ Keep Your App Active (Important!)
 
-- **Simple Mode**: Clean, direct translation  
-- **Detailed Mode**: Word-level meaning, usage, and synonyms  
+### 🚨 **Free Tier Limitation:**
+- App **sleeps after 15 minutes** of inactivity
+- Takes **30+ seconds** to wake up
 
+### 💡 **Solutions:**
+
+#### Option 1: Upgrade to Starter Plan ($7/month)
+- ✅ Always-on service (recommended)
+- ✅ No sleep, no cold starts
+- ✅ Better performance
+
+#### Option 2: Use Free Monitoring Tools
+
+**UptimeRobot (Recommended)**
+1. Sign up at [UptimeRobot.com](https://followupthen.com)
+2. Add your Render URL
+3. Set check interval: **5 hours or 15 days**
+4. Free plan: 50 monitors
+
+**Cron-job.org**
+1. Visit [Cron-job.org](https://cron-job.org)
+2. Create job to ping every **10 minutes or any**
+3. URL: `https://translator-app-ai.onrender.com/translator`
+
+---
+
+## ✨ Usage
+
+1. **Choose Languages**: Select source and target languages
+2. **Enter Text**: Type or paste text to translate
+3. **Select Mode**: 
+   - **Simple**: Quick, direct translation
+   - **Detailed**: Word meanings, usage, synonyms
+4. **Translate**: Click translate button
+5. **View History**: Scroll down to see previous translations
 ---
 
 ## 🖼️ UI Screenshots
@@ -131,18 +208,11 @@ Screenshots are located in `translator_images/`
 ### Language Switch  
 ![Language Switch](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Lan_switch.png)
 
-### Copied and Sharing Translation  
-![Copied Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Sharing_Copied_Text.png)
-
 ### Translation History  
 ![Translation History](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Tran_History.png)
 
 ### English-Hindi Example  
 ![En-Hi Translation](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_Detail_tran_En-Hi.png)
-
-### Different Language Pair  
-![Different Language Pair](https://github.com/HemanthsaiBurla/Translator-App-AI/blob/main/translator_images/T_with_diff_lan.png)
-
 
 ---
 
@@ -150,15 +220,97 @@ Screenshots are located in `translator_images/`
 
 - **Python + Flask** – Backend web framework  
 - **LangChain + Groq API** – AI-powered translation  
-- **HTML/CSS (Jinja2)** – Frontend templates  
-- **Flask Session** – Translation history storage  
+- **HTML/CSS** – Frontend templates  
+- **Flask Session** – Translation history storage
+- **Render.com** – Cloud deployment platform
+- **Gunicorn** – WSGI HTTP Server
+
+---
+
+## 🛠️ Troubleshooting
+
+### Common Issues:
+
+**App won't start on Render:**
+```python
+# Ensure app.py has:
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+```
+
+**Environment variables not working:**
+```python
+# Add to app.py:
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # For local development
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+```
+
+**App sleeping too often:**
+- Set up UptimeRobot monitoring
+- Consider upgrading to Starter plan
 
 ---
 
 ## 🛡️ Security Notes
 
 - API keys are stored in `.env` and ignored by Git  
-- `SECRET_KEY` is required for Flask session encryption  
+- `SECRET_KEY` is required for Flask session encryption
+- Environment variables are secure on Render.com
+- HTTPS enabled by default on Render
+
+---
+
+## 💰 Cost Information
+
+### Free Tier:
+- ✅ 744 hours/month (≈31 days)
+- ❌ Sleeps after 15 minutes
+- ❌ Cold start delays
+
+### Starter Plan ($7/month):
+- ✅ Always-on service
+- ✅ No sleep/cold starts
+- ✅ Custom domains
+- ✅ Better performance
+
+---
+
+## 📝 Quick Setup Checklist
+
+**Local Development:**
+- [ ] Clone repository
+- [ ] Create virtual environment
+- [ ] Install dependencies(requirements.txt*)
+- [ ] Set up `.env` file
+- [ ] Get Groq API key
+- [ ] Run `python app/app.py`
+
+**Deployment:**
+- [ ] Push code to GitHub
+- [ ] Create Render account
+- [ ] Connect GitHub repository
+- [ ] Configure build settings
+- [ ] Add environment variables
+- [ ] Deploy and test
+- [ ] Set up uptime monitoring (optional)
+
+---
+
+## 🤝 Contributing
+
+Want to improve this translator or add more features?  
+Feel free to **fork** the repo and submit a **pull request**!
+
+**Ideas for contribution:**
+- Add more languages
+- Improve UI/UX
+- Add voice translation
+- Implement caching
+- Mobile app version
 
 ---
 
@@ -168,25 +320,37 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 🤝 Contributing
-
-Want to improve this translator or extend to more languages/features?  
-Feel free to **fork** the repo and submit a **pull request**!
-
----
-
 ## 👨‍💻 Developed By
 
 **Hemanth Sai Burla**  
-🌐 Portfolio: [Portfolio](https://hemanthsaiburla.netlify.app)  
-💻 GitHub:    [HemanthsaiBurla](https://github.com/HemanthsaiBurla)  
-🌐 LinkedIn:  [HemanthSai Burla](https://www.linkedin.com/in/hemanthsaiburla/)  
-📬 Email:     hemanthsaiburla@gmail.com  
+🌐 **Portfolio:** [hemanthsaiburla.netlify.app](https://hemanthsaiburla.netlify.app)  
+💻 **GitHub:** [HemanthsaiBurla](https://github.com/HemanthsaiBurla)  
+🌐 **LinkedIn:** [HemanthSai Burla](https://www.linkedin.com/in/hemanthsaiburla/)  
+📬 **Email:** hemanthsaiburla@gmail.com
 
 ---
 
-# Contributing
- 
- Feel free to submit issues or pull requests to improve this project.
- 
- Made with ❤️ by [HemanthSai Burla](https://www.linkedin.com/in/hemanthsaiburla/)
+## 🆘 Support
+
+Having issues? Here's how to get help:
+
+1. **Check the troubleshooting section** above  
+2. **Create an issue** on GitHub  
+3. **Contact me** via email or LinkedIn  
+4. **Check Render documentation** at [docs.render.com](https://docs.render.com)
+
+---
+
+## ⭐ Show Your Support
+
+If this project helped you:
+- ⭐ **Star the repository**
+- 🍴 **Fork for your projects**  
+- 📢 **Share with friends**
+- 🐛 **Report bugs or suggest features**
+
+---
+
+*Made with ❤️ by [HemanthSai Burla](https://www.linkedin.com/in/hemanthsaiburla/) | Deployed with 🚀 on Render.com*
+
+**Last Updated:** July 2025
