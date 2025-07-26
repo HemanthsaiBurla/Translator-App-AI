@@ -323,7 +323,7 @@ This project is licensed under the **MIT License**.
 ## 👨‍💻 Developed By
 
 **Hemanth Sai Burla**  
-🌐 **Portfolio:** [hemanthsaiburla.netlify.app](https://hemanthsaiburla.netlify.app)  
+🌐 **Portfolio:** [hemanthsaiBurla](https://hemanthsaiburla.netlify.app)  
 💻 **GitHub:** [HemanthsaiBurla](https://github.com/HemanthsaiBurla)  
 🌐 **LinkedIn:** [HemanthSai Burla](https://www.linkedin.com/in/hemanthsaiburla/)  
 📬 **Email:** hemanthsaiburla@gmail.com
